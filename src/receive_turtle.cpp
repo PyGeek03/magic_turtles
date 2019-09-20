@@ -1,3 +1,9 @@
+/*************************************************** 
+Author: Huong Minh Luu
+Date last updated: 21/09/19 by Minh
+Purpose: Subscriber node named receive_turtle
+Subscribed topic: /magic_turtles/turtles
+****************************************************/
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
