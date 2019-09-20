@@ -10,7 +10,7 @@ void turtlesCallback(const std_msgs::String::ConstPtr& msg) {
 int main(int argc, char **argv) {
     // ros::init() is required before using any other part of ROS
     // The node's name: receive_turtle
-    ros::init(argc, argv, "receive_turtle");
+    ros::init(argc, argv, "receive_turtle", ros::init_options::AnonymousName);
 
     // The node's main access point to communications with ROS
     ros::NodeHandle n;
