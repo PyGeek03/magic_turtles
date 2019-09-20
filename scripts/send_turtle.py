@@ -1,3 +1,9 @@
+"""
+Author: Huong Minh Luu
+Date last updated: 21/09/19 by Minh
+Purpose: Publisher node named send_turtle
+Published topic: /magic_turtles/turtles
+"""
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
@@ -28,9 +34,6 @@ def main():
         if new_turtle >= 7:
             # rospy.get_time() ensures the string sent is always unique
             good_turtle = "Turtle {} with quality {}".format(index, new_turtle)
-
-            # prints the string to the screen and writes it to rosout & the node's log
-            rospy.loginfo(good_turtle)
 
             # publishes the string to turtles topic
             pub.publish(good_turtle)
