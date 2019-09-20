@@ -15,15 +15,19 @@ def main():
     # pulls out new turtles at the rate of 5 per second
     rate = rospy.Rate(5)
 
+    # counts the number of turtles
+    index = 0
+
     # pulls out turtles until the program is shutdown
     while not rospy.is_shutdown():
         # pulls out a new turtle with quality from 1 to 10
         new_turtle = randrange(1, 11)
+        index += 1
 
         # sends the turtle if it's of high quality
         if new_turtle >= 7:
             # rospy.get_time() ensures the string sent is always unique
-            good_turtle = "New turtle with quality {} at {}".format(new_turtle, rospy.get_time())
+            good_turtle = "Turtle {} with quality {}".format(index, new_turtle)
 
             # prints the string to the screen and writes it to rosout & the node's log
             rospy.loginfo(good_turtle)
