@@ -1,0 +1,4 @@
+<launch>
+    <node name="send_turtle" pkg="magic_turtles" type="send_turtle.py" output="screen"/>
+    <node name="receive_turtle" pkg="magic_turtles" type="receive_turtle" output="screen"/>
+</launch>
