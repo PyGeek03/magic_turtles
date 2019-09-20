@@ -1,10 +1,10 @@
+#!/usr/bin/env python
 """
 Author: Huong Minh Luu
 Date last updated: 21/09/19 by Minh
 Purpose: Publisher node named send_turtle
 Published topic: /magic_turtles/turtles
 """
-#!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
 from random import randrange
