@@ -6,14 +6,14 @@ Purpose: Publisher node named send_turtle
 Published topic: /magic_turtles/turtles
 """
 import rospy
-from std_msgs.msg import String
+from magic_turtles.msg import Turtle
 from random import randrange
 
 
 def main():
-    # publishes to turtles topic using message type String,
+    # publishes to magic_turtles/turtles topic using message type Turtle,
     # limiting number of queued messages to 10
-    pub = rospy.Publisher('turtles', String, queue_size=10)
+    pub = rospy.Publisher('magic_turtles/turtles', Turtle, queue_size=10)
 
     # tells rospy the node's name: send_turtle
     rospy.init_node('send_turtle', anonymous=True)
@@ -27,18 +27,19 @@ def main():
     # pulls out turtles until the program is shutdown
     while not rospy.is_shutdown():
         # pulls out a new turtle with quality from 1 to 10
-        new_turtle = randrange(1, 11)
+        quality = randrange(1, 11)
         index += 1
 
         # sends the turtle if it's of high quality
-        if new_turtle >= 7:
-            # rospy.get_time() ensures the string sent is always unique
-            good_turtle = "Turtle {} with quality {}".format(index, new_turtle)
+        if quality >= 7:
+            turtle = Turtle()
+            turtle.index = index
+            turtle.quality = quality
 
-            # publishes the string to turtles topic
-            pub.publish(good_turtle)
+            # publishes the turtle to magic_turtles/turtles topic
+            pub.publish(turtle)
 
-        # makes sure we only pulls out 5 turtles per second
+        # makes sure we only pull out 5 turtles per second
         rate.sleep()
 
 
