@@ -2,7 +2,9 @@
 """
 Author: Huong Minh Luu
 Date last updated: 21/09/19 by Minh
-Purpose: Publisher node named send_turtle
+Purpose: Publisher node named send_turtle, which pulls from a magic hat 5
+turtles every second, and sends high quality turtles (quality >= 7) to the
+topic /magic_turtles/turtles
 Published topic: /magic_turtles/turtles
 """
 import rospy
