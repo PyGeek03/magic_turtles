@@ -1,9 +1,10 @@
-/*************************************************** 
+/********************************************************* 
 Author: Huong Minh Luu
 Date last updated: 21/09/19 by Minh
-Purpose: Subscriber node named receive_turtle
+Purpose: Subscriber node named receive_turtle, which
+keeps tab on turtles from topic /magic_turtles/turtles
 Subscribed topic: /magic_turtles/turtles
-****************************************************/
+**********************************************************/
 #include "ros/ros.h"
 #include "magic_turtles/Turtle.h"
 
